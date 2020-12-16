@@ -1,0 +1,12 @@
+fieldset {
+	background-color: royalblue;
+	color: white;
+	width: 350px;
+	margin: auto;
+	margin-top: 50px;
+}
+
+legend {
+	color: white;
+	background-color: green;
+}

@@ -1,0 +1,14 @@
+#layout {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.Flex {
+	background-color: skyblue;
+	color: white;
+	padding: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	width: 50px;
+	text-align: center;
+}

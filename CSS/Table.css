@@ -1,0 +1,19 @@
+table ,td, th {
+	border: 1.5px solid black;
+	border-collapse: collapse;
+	text-align: center;
+	padding: 10px;
+}
+
+tbody {
+	color: blue;
+}
+
+tfoot {
+	font-weight: bold;
+}
+
+table {
+	margin-left: auto;
+  	margin-right: auto;
+}

@@ -1,0 +1,15 @@
+#layout {
+	display: grid;
+	grid-row-gap: 10px;
+	grid-column-gap: 20px;
+	grid-template-columns: 200px 200px auto;
+	background-color: royalblue;
+	padding: 10px;
+}
+
+.grid {
+	background-color: white;
+	padding: 10px;
+	text-align: center;
+
+}
