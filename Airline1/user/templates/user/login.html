@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LOG IN</title>
+</head>
+<body>
+	<h3>{{message}}</h3>
+	<form action="{% url 'sign_in' %}" method="post">
+		{% csrf_token %}
+		<input type="text" name="username" placeholder="User Name">
+		<input type="password" name="password" placeholder="Password">
+		<input type="submit" value="login">
+	</form>
+</body>
+</html>

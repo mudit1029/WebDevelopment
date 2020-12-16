@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tasks</title>
+	<script type="text/javascript">
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			document.querySelector('button').disabled = true;
+
+			document.querySelector('#task').onkeyup = () => {
+
+			if (document.querySelector('#task').value.length>0) {
+				document.querySelector('button').disabled = false;
+			}
+			else {
+				document.querySelector('button').disabled = true;
+			}
+					
+
+			};
+			document.querySelector('form').onsubmit = () => {
+
+				let task = document.querySelector('#task').value;
+				if (task.length > 0){
+
+					let li = document.createElement('li');
+				
+					li.innerHTML = task;
+
+				document.querySelector('#tasks').append(li);
+				document.querySelector('#task').value = "";
+
+				document.querySelector('button').disabled = true;
+
+				return false;
+
+				}
+				else {
+					alert("Jyada Hoshiyari Nhi Mere Bacche :)")
+				}
+
+				
+
+			}
+
+		});
+
+	</script>
+</head>
+<body>
+	<h1>Tasks</h1>
+	<ul id="tasks">
+	</ul>
+	<form>
+		<input id="task" type="text" name="task" placeholder="New Task">
+		<button>Submit</button>
+	</form>
+</body>
+</html>

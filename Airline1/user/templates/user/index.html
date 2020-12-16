@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+</head>
+<body>
+	<h1>About Login User:</h1>
+	<ul>
+		{%csrf_token%}
+		<li>User Name: {{request.user.username}}</li>
+		<li>Full Name: {{request.user.first_name}} {{request.user.last_name}}</li>
+		<li>Email: {{request.user.email}}</li>
+	</ul>
+	<a href="{% url 'sign_out' %}">Log Out</a>
+</body>
+</html>

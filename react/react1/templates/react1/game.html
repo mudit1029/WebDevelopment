@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game</title>
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	<style type="text/css">
+			
+		#win {
+			font-size: 100px;
+			color: royalblue;
+			text-align: center;
+		}
+
+		#que {
+			font-size: 30px;
+		}
+
+		#form {
+			text-align: center;
+
+		}
+
+	</style>
+</head>
+<body>
+	<div id='app'></div>
+	<script type="text/babel">
+
+		class App extends React.Component {
+
+			constructor(props) {
+				super(props);
+				this.state = {
+					num1: 1,
+					num2: 1,
+					response: "",
+					score: 0
+				};
+			}
+
+			
+
+			render() {
+
+				if(this.state.score === 10){
+				return (
+					<div id='win'>You Won</div>
+				);
+				}
+
+				return (
+					<div id='form'>
+						<h3 id='que'>Question: {this.state.num1} + {this.state.num2}</h3>
+						<input onKeyPress={this.keyPress} onChange={this.updateResponse} value={this.state.response} />
+						<h2>Score: {this.state.score} </h2>
+					</div>
+				);
+			}
+
+			updateResponse = (event) => {
+				this.setState({
+					response: event.target.value
+				});	
+			}	
+
+			keyPress = (event) => {
+				if(event.key === 'Enter') {
+					const answer = parseInt(this.state.response);
+					if(answer === this.state.num1 + this.state.num2){
+						this.setState(state => ({
+							score: state.score + 1
+						}));
+						this.state.response = "";
+						this.setState(state => ({
+							num1: Math.ceil(Math.random() * 10),
+							num2: Math.ceil(Math.random() * 10)
+						}));
+					}
+					else {
+						this.setState(state => ({
+							score: state.score - 1
+						}));
+					}
+				}
+			}	
+			
+		}
+			
+		ReactDOM.render(<App />, document.querySelector('#app'));
+	</script>
+</body>
+</html>

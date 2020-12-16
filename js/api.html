@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>API Fetching</title>
+	<script type="text/javascript">
+		
+		document.addEventListener('DOMContentLoaded', () => {
+
+			fetch('http://www.omdbapi.com/?apikey=ed85a2f6&i=tt0050083')
+			.then(response => response.json())
+			.then(data => {
+				let title = data.Title;
+				let released = data.Released;
+				document.querySelector('h1').innerHTML = title;
+				document.querySelector('h3').innerHTML = released;
+				
+			})
+
+		});
+
+	</script>
+</head>
+<body>
+	<h1></h1>
+	<h3></h3>
+</body>
+</html>
